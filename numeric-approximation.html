@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/particle.css">
+    <title>Lab Manual</title>
+    <style>
+        .particle__section {
+            padding: 0rem !important;
+            margin-top: -30rem;
+        }
+        
+        .content__section {
+            margin-top: -15rem;
+            color: white;
+        }
+        
+        @media (max-width:1360px) {
+            .content__section {
+                margin-top: -14rem;
+            }
+            .particle__section {
+                margin-top: -22rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .content__section {
+                margin-top: -13rem !important;
+            }
+            .particle__section {
+                margin-top: -15rem;
+            }
+        }
+        
+        @media (max-width: 815px) {
+            .content__section {
+                margin-top: -12rem !important;
+            }
+            .particle__section {
+                margin-top: -12rem;
+            }
+        }
+        
+        @media (max-width: 664px) {
+            .particle__section {
+                margin-top: -8rem;
+            }
+        }
+        
+        @media (max-width: 528px) {
+            .particle__section {
+                margin-top: -15rem;
+            }
+            .particles-js-canvas-el {
+                height: 400px !important;
+            }
+        }
+        
+        @media (max-width: 437px) {
+            .content__section {
+                margin-top: -16rem !important;
+            }
+            .particles-js-canvas-el {
+                height: 500px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand font-weight-bold" href="index.html">Manual</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Lab</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Simulation</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="particle__section">
+
+        <div id="particles-js">
+        </div>
+    </section>
+
+    <section class="content__section">
+        <div class="row">
+            <div class="col-lg-6 m-auto text-center">
+                <div class="font-weight-bold heading">Numeric Approximation</div>
+                <p>
+                    Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="documentation__section">
+        <div class="row">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link side__nav active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                    <a class="nav-link side__nav" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link side__nav" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                    <a class="nav-link side__nav" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <h5>Introduction </h5>
+                        <div class="divider"></div>
+                        <p>For many mathematical problems, such as finding area under a curve, it may not be possible to find an exact formula. But still these can be computed to arbitrary precision by using appoximate methods. In this lab you will learn
+                            how to code these approximation methods to solve these problems using a computer.</p>
+                        <h5>Theory
+                        </h5>
+                        <div class="divider"></div>
+                        <p>The problem finding area under a curve means calculating the area between a give curve and the x-axis( the line y=0), between two limits, say x=a and x=b. As you can remember from you high school mathematics, this problem is easily
+                            solvable by finding the integral of the function and plugging the values of the limits in the intergral. The difference of the limits gives the area under then curve. But there are some mathematical functions which are not
+                            integrable. Also, this method is applicable for only smooth functions. Can something be done to find the area under the curves which are not well behaved? It turns out that people were able to "approximate" the solution to
+                            this problem to any reasonable arbitrary degree, for any arbitrary curve much before integration was discovered. As we all know that rectangle is the easiest of geometrical figures to find the area of, so the task of finding
+                            the area under a curve was expressed as a problem of finding the area of vertical rectangular strips. The boundary limits is divided into some x equal intervals of length(l) equal to l=(b-a)/n. Now, the area falling under each
+                            of these strips is approximated using an rectangle whose width is equal to the width of interval and height is equal to the value of the function at the beginning of the interval. A variation of this algorithm takes the value
+                            of the function at the middle of the interval. Now, the area under the curve is just the sum of areas of the individual strips.</p>
+                        <img src="http://cse02-iiith.vlabs.ac.in/exp1/arch.gif" width="400" alt="">
+                        <h5>Objective</h5>
+                        <div class="divider"></div>
+                        <ol class="list__item">
+                            <li>To understand that for some problems an approximate numerial solution is as good as the exact solution for practical purposes.</li>
+                            <li>
+                                To understand how to apply these solutions to obtain arbitrary precision.</li>
+                        </ol>
+                        <h5>Manual</h5>
+                        <div class="divider"></div>
+                        <p>In this lab you calculate the area under the curve using approximation techniques.</p>
+                        <h5>Procedure</h5>
+                        <div class="divider"></div>
+                        <p>Procedure for the experiment is as follows.</p>
+                        <ol class="list__item">
+                            <li>Read the Problem Statement.</li>
+                            <li>Press START to start the experiment</li>
+                            <li>Select the limits of Integration i.e. a and b.</li>
+                            <li>Press OK to save the value of a and b.</li>
+                            <li>Press NEXT to see the execution of the code.</li>
+                            <li>Relavant line in the code is shown here.</li>
+                            <li>The visual simulation of area under curve and output of the code is shown in the right.
+                            </li>
+                            <li>Value of Local Variables are shown here.</li>
+                            <li>Output of code is shown here.</li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <h5>Introduction </h5>
+                        <div class="divider"></div>
+                        <p>For many mathematical problems, such as finding area under a curve, it may not be possible to find an exact formula. But still these can be computed to arbitrary precision by using appoximate methods. In this lab you will learn
+                            how to code these approximation methods to solve these problems using a computer.</p>
+                        <h5>Theory
+                        </h5>
+                        <div class="divider"></div>
+                        <p>The problem finding area under a curve means calculating the area between a give curve and the x-axis( the line y=0), between two limits, say x=a and x=b. As you can remember from you high school mathematics, this problem is easily
+                            solvable by finding the integral of the function and plugging the values of the limits in the intergral. The difference of the limits gives the area under then curve. But there are some mathematical functions which are not
+                            integrable. Also, this method is applicable for only smooth functions. Can something be done to find the area under the curves which are not well behaved? It turns out that people were able to "approximate" the solution to
+                            this problem to any reasonable arbitrary degree, for any arbitrary curve much before integration was discovered. As we all know that rectangle is the easiest of geometrical figures to find the area of, so the task of finding
+                            the area under a curve was expressed as a problem of finding the area of vertical rectangular strips. The boundary limits is divided into some x equal intervals of length(l) equal to l=(b-a)/n. Now, the area falling under each
+                            of these strips is approximated using an rectangle whose width is equal to the width of interval and height is equal to the value of the function at the beginning of the interval. A variation of this algorithm takes the value
+                            of the function at the middle of the interval. Now, the area under the curve is just the sum of areas of the individual strips.</p>
+                        <img src="http://cse02-iiith.vlabs.ac.in/exp1/arch.gif" width="400" alt="">
+                        <h5>Objective</h5>
+                        <div class="divider"></div>
+                        <ol class="list__item">
+                            <li>To understand that for some problems an approximate numerial solution is as good as the exact solution for practical purposes.</li>
+                            <li>
+                                To understand how to apply these solutions to obtain arbitrary precision.</li>
+                        </ol>
+                        <h5>Manual</h5>
+                        <div class="divider"></div>
+                        <p>In this lab you calculate the area under the curve using approximation techniques.</p>
+                        <h5>Procedure</h5>
+                        <div class="divider"></div>
+                        <p>Procedure for the experiment is as follows.</p>
+                        <ol class="list__item">
+                            <li>Read the Problem Statement.</li>
+                            <li>Press START to start the experiment</li>
+                            <li>Select the limits of Integration i.e. a and b.</li>
+                            <li>Press OK to save the value of a and b.</li>
+                            <li>Press NEXT to see the execution of the code.</li>
+                            <li>Relavant line in the code is shown here.</li>
+                            <li>The visual simulation of area under curve and output of the code is shown in the right.
+                            </li>
+                            <li>Value of Local Variables are shown here.</li>
+                            <li>Output of code is shown here.</li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <h5>Introduction </h5>
+                        <div class="divider"></div>
+                        <p>For many mathematical problems, such as finding area under a curve, it may not be possible to find an exact formula. But still these can be computed to arbitrary precision by using appoximate methods. In this lab you will learn
+                            how to code these approximation methods to solve these problems using a computer.</p>
+                        <h5>Theory
+                        </h5>
+                        <div class="divider"></div>
+                        <p>The problem finding area under a curve means calculating the area between a give curve and the x-axis( the line y=0), between two limits, say x=a and x=b. As you can remember from you high school mathematics, this problem is easily
+                            solvable by finding the integral of the function and plugging the values of the limits in the intergral. The difference of the limits gives the area under then curve. But there are some mathematical functions which are not
+                            integrable. Also, this method is applicable for only smooth functions. Can something be done to find the area under the curves which are not well behaved? It turns out that people were able to "approximate" the solution to
+                            this problem to any reasonable arbitrary degree, for any arbitrary curve much before integration was discovered. As we all know that rectangle is the easiest of geometrical figures to find the area of, so the task of finding
+                            the area under a curve was expressed as a problem of finding the area of vertical rectangular strips. The boundary limits is divided into some x equal intervals of length(l) equal to l=(b-a)/n. Now, the area falling under each
+                            of these strips is approximated using an rectangle whose width is equal to the width of interval and height is equal to the value of the function at the beginning of the interval. A variation of this algorithm takes the value
+                            of the function at the middle of the interval. Now, the area under the curve is just the sum of areas of the individual strips.</p>
+                        <img src="http://cse02-iiith.vlabs.ac.in/exp1/arch.gif" width="400" alt="">
+                        <h5>Objective</h5>
+                        <div class="divider"></div>
+                        <ol class="list__item">
+                            <li>To understand that for some problems an approximate numerial solution is as good as the exact solution for practical purposes.</li>
+                            <li>
+                                To understand how to apply these solutions to obtain arbitrary precision.</li>
+                        </ol>
+                        <h5>Manual</h5>
+                        <div class="divider"></div>
+                        <p>In this lab you calculate the area under the curve using approximation techniques.</p>
+                        <h5>Procedure</h5>
+                        <div class="divider"></div>
+                        <p>Procedure for the experiment is as follows.</p>
+                        <ol class="list__item">
+                            <li>Read the Problem Statement.</li>
+                            <li>Press START to start the experiment</li>
+                            <li>Select the limits of Integration i.e. a and b.</li>
+                            <li>Press OK to save the value of a and b.</li>
+                            <li>Press NEXT to see the execution of the code.</li>
+                            <li>Relavant line in the code is shown here.</li>
+                            <li>The visual simulation of area under curve and output of the code is shown in the right.
+                            </li>
+                            <li>Value of Local Variables are shown here.</li>
+                            <li>Output of code is shown here.</li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <h5>Introduction </h5>
+                        <div class="divider"></div>
+                        <p>For many mathematical problems, such as finding area under a curve, it may not be possible to find an exact formula. But still these can be computed to arbitrary precision by using appoximate methods. In this lab you will learn
+                            how to code these approximation methods to solve these problems using a computer.</p>
+                        <h5>Theory
+                        </h5>
+                        <div class="divider"></div>
+                        <p>The problem finding area under a curve means calculating the area between a give curve and the x-axis( the line y=0), between two limits, say x=a and x=b. As you can remember from you high school mathematics, this problem is easily
+                            solvable by finding the integral of the function and plugging the values of the limits in the intergral. The difference of the limits gives the area under then curve. But there are some mathematical functions which are not
+                            integrable. Also, this method is applicable for only smooth functions. Can something be done to find the area under the curves which are not well behaved? It turns out that people were able to "approximate" the solution to
+                            this problem to any reasonable arbitrary degree, for any arbitrary curve much before integration was discovered. As we all know that rectangle is the easiest of geometrical figures to find the area of, so the task of finding
+                            the area under a curve was expressed as a problem of finding the area of vertical rectangular strips. The boundary limits is divided into some x equal intervals of length(l) equal to l=(b-a)/n. Now, the area falling under each
+                            of these strips is approximated using an rectangle whose width is equal to the width of interval and height is equal to the value of the function at the beginning of the interval. A variation of this algorithm takes the value
+                            of the function at the middle of the interval. Now, the area under the curve is just the sum of areas of the individual strips.</p>
+                        <img src="http://cse02-iiith.vlabs.ac.in/exp1/arch.gif" width="400" alt="">
+                        <h5>Objective</h5>
+                        <div class="divider"></div>
+                        <ol class="list__item">
+                            <li>To understand that for some problems an approximate numerial solution is as good as the exact solution for practical purposes.</li>
+                            <li>
+                                To understand how to apply these solutions to obtain arbitrary precision.</li>
+                        </ol>
+                        <h5>Manual</h5>
+                        <div class="divider"></div>
+                        <p>In this lab you calculate the area under the curve using approximation techniques.</p>
+                        <h5>Procedure</h5>
+                        <div class="divider"></div>
+                        <p>Procedure for the experiment is as follows.</p>
+                        <ol class="list__item">
+                            <li>Read the Problem Statement.</li>
+                            <li>Press START to start the experiment</li>
+                            <li>Select the limits of Integration i.e. a and b.</li>
+                            <li>Press OK to save the value of a and b.</li>
+                            <li>Press NEXT to see the execution of the code.</li>
+                            <li>Relavant line in the code is shown here.</li>
+                            <li>The visual simulation of area under curve and output of the code is shown in the right.
+                            </li>
+                            <li>Value of Local Variables are shown here.</li>
+                            <li>Output of code is shown here.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- scripts -->
+    <script src="./assets/js/particles.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+
+</body>
+
+</html>
